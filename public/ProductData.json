@@ -1,0 +1,98 @@
+[
+  {
+    "id": 1,
+    "name": "AI Writing Pro",
+    "description": "Advanced AI-powered writing assistant for blogs, emails, and content creation.",
+    "price": "$30",
+    "period": "monthly",
+    "tag": "popular",
+    "tagType": "popular",
+    "features": [
+      "Unlimited AI writing",
+      "Grammar correction",
+      "SEO optimization",
+      "Multiple tone support"
+    ],
+    "icon": "../src/assets/assets/products/writing_2327400 1.png"
+  },
+  {
+    "id": 2,
+    "name": "Design Templates Pack",
+    "description": "A collection of premium design templates for web, social media, and branding.",
+    "price":"$40",
+    "period": "one-time",
+    "tag": "best seller",
+    "tagType": "best seller",
+    "features": [
+      "500+ templates",
+      "Editable in Figma",
+      "High resolution",
+      "Commercial use license"
+    ],
+    "icon": "../src/assets/assets/products/design-tool.png"
+  },
+  {
+    "id": 3,
+    "name": "Premium Stock Assets",
+    "description": "Access to high-quality stock images, videos, and graphics.",
+    "price": "$60",
+    "period": "monthly",
+    "tag": "new",
+    "tagType": "new",
+    "features": [
+      "Unlimited downloads",
+      "4K videos",
+      "Royalty-free assets",
+      "New assets added weekly"
+    ],
+    "icon": "../src/assets/assets/products/writing_2327400 1.png"
+  },
+  {
+    "id": 4,
+    "name": "Automation Toolkit",
+    "description": "Tools to automate repetitive tasks and workflows.",
+    "price": "$90",
+    "period": "yearly",
+    "tag": "popular",
+    "tagType": "popular",
+    "features": [
+      "Workflow automation",
+      "Task scheduling",
+      "API integrations",
+      "Custom triggers"
+    ],
+    "icon": "../src/assets/assets/products/operation.png"
+  },
+  {
+    "id": 5,
+    "name": "Resume Builder Pro",
+    "description": "Create professional resumes with ATS-friendly templates.",
+    "price": "$50",
+    "period": "one-time",
+    "tag": "best seller",
+    "tagType": "best seller",
+    "features": [
+      "100+ templates",
+      "ATS optimization",
+      "Export to PDF",
+      "Easy customization"
+    ],
+    "icon": "../src/assets/assets/products/portfolio.png"
+  },
+  {
+    "id": 6,
+    "name": "Social Media Content Kit",
+    "description": "Ready-made content and templates for social media growth.",
+    "price":"$80",
+    "period": "monthly",
+    "tag": "new",
+    "tagType": "new",
+    "features": [
+      "Content calendar",
+      "Post templates",
+      "Hashtag suggestions",
+      "Platform-specific designs"
+    ],
+    "icon": "../src/assets/assets/products/social-media.png"
+  }
+]

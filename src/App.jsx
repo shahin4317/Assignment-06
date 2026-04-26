@@ -3,11 +3,26 @@ import './App.css'
 import Navbar from './Components/Navbar'
 import Banner from './Components/Banner/Banner'
 import Rating from './Components/Rating/Rating'
-import PremiumToolsSection from './Components/PremiumToolsSection/PremiumToolsSection'
+
 import Itemcard from './Components/Itemcard/Itemcard'
+import { Suspense } from 'react'
+import DigitalTools from './Components/DigitalTools/DigitalTools'
+import PricingCard from './Components/PricingCard/PricingCard'
+
+const fetchItem= async()=>{
+  const res = await fetch('./ProductData.json')
+  return res.json();
+}
+const fetchCard = async() =>{
+  const res = await fetch('./PricingCard.json')
+  return res.json();
+}
+
 function App() {
+  const itemPromise = fetchItem();
+  const pricingCardPromise = fetchCard()
 
-
+  
   return (
     <>
     <header>
@@ -16,11 +31,19 @@ function App() {
     <main>
       <Banner></Banner>
       <Rating></Rating>
-      <PremiumToolsSection></PremiumToolsSection>
-      <br />
-      <br />
+     
+      <Suspense fallback={"loding...."}>
+        <Itemcard itemPromise={itemPromise}></Itemcard>
+      </Suspense>
     </main>
-    <Itemcard></Itemcard>
+    <footer>
+      <DigitalTools></DigitalTools>
+
+      <Suspense fallback={"Loding..."}>
+        <PricingCard pricingCardPromise={pricingCardPromise}></PricingCard>
+      </Suspense>
+    </footer>
+    
     
  
    
