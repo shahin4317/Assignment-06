@@ -13,7 +13,7 @@ const PricingCard = ({pricingCardPromise}) => {
                 <p className='text-sm text-gray-500'>Choose the plan that fits your needs. Upgrade or downgrade anytime.</p>
             </div>
             {/* card */}
-            <div>
+            <div className=' grid md:grid-cols-1 lg:grid-cols-3 '>
                 {
                     data.map(cardItems =>{
                         

@@ -5,6 +5,7 @@ import rocketImg from "../../assets/assets/products/rocket.png"
 const DigitalTools = () => {
     return (
         <div>
+           
             <div className='text-center'>
                 <h1 className='text-3xl font-bold '>Get Started in 3 Steps</h1>
                 <p className='text-sm text-gray-500'>Start using premium digital tools in minutes, not hours.</p>
@@ -12,7 +13,7 @@ const DigitalTools = () => {
 
 
 
-
+      
             <div className='grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3 gap-10 m-20 p-10'>
                 <div className='relative card bg-base-200 shadow-sm space-y-5 p-5 items-center'>
                     <span className='absolute top-3 right-3 bg-blue-600 text-white text-sm px-3 py-1 rounded-full'>

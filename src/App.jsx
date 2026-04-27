@@ -5,7 +5,7 @@ import Banner from './Components/Banner/Banner'
 import Rating from './Components/Rating/Rating'
 
 import Itemcard from './Components/Itemcard/Itemcard'
-import { Suspense } from 'react'
+import { Suspense, useState } from 'react'
 import DigitalTools from './Components/DigitalTools/DigitalTools'
 import PricingCard from './Components/PricingCard/PricingCard'
 
@@ -18,22 +18,26 @@ const fetchCard = async() =>{
   return res.json();
 }
 
+
+
 function App() {
   const itemPromise = fetchItem();
   const pricingCardPromise = fetchCard()
+
+  const [carts, setCarts] = useState([])
 
   
   return (
     <>
     <header>
-      <Navbar></Navbar>
+      <Navbar carts={carts}></Navbar>
     </header>
     <main>
       <Banner></Banner>
       <Rating></Rating>
      
       <Suspense fallback={"loding...."}>
-        <Itemcard itemPromise={itemPromise}></Itemcard>
+        <Itemcard carts={carts} setCarts={setCarts} itemPromise={itemPromise}></Itemcard>
       </Suspense>
     </main>
     <footer>

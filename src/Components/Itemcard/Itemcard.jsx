@@ -1,7 +1,8 @@
 import React, { use, useState } from 'react';
 import AvailableProducts from '../AvailableProducts/AvailableProducts';
+import Carts from '../Carts/Carts';
 
-const Itemcard = ({ itemPromise }) => {
+const Itemcard = ({ itemPromise, carts, setCarts }) => {
     const items = use(itemPromise)
 
     const [selectedType, setSelectedType] = useState(["avilable"])
@@ -23,9 +24,16 @@ const Itemcard = ({ itemPromise }) => {
                         className={`btn ${selectedType === "Selected" ? "bg-blue-600 rounded-full text-white" : "btn rounded-full border-blue-600 "}`}>Card</button>
                 </div>
             </div>
-            {
-                <AvailableProducts items={items}></AvailableProducts>
-            }
+            {/* daynamic contant */}
+            <div>
+                
+                    <AvailableProducts carts={carts} setCarts={setCarts} items={items}></AvailableProducts>
+
+                    <Carts carts={carts}></Carts>
+                
+
+            </div>
+
         </div>
     );
 };

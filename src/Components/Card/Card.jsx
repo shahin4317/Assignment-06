@@ -2,8 +2,15 @@ import React from 'react';
 import Features from '../Features/Features';
 
 
-const Card = ({ item }) => {
+const Card = ({ item ,carts, setCarts }) => {
     const { name, description, price, period, icon, tagType,features } = item
+
+    const addToCart = (item)=>{
+        
+        
+        setCarts([...carts,item])
+        console.log(item);
+    }
     return (
         <div className="card bg-base-100 shadow-sm space-y-5 p-10">
             <div className='absolute top-3 right-3 bg-blue-400 text-white text-sm px-3 py-1 rounded-full'>
@@ -28,7 +35,8 @@ const Card = ({ item }) => {
 
                 </ul>
             </div>
-            <button className='btn btn-primary rounded-full'>Buy Now</button>
+            {/*  */}
+            <button onClick={() =>addToCart(item)} className='btn btn-primary rounded-full'>Buy Now</button>
         </div>
     );
 };
