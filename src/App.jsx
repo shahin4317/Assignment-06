@@ -10,6 +10,7 @@ import DigitalTools from './Components/DigitalTools/DigitalTools'
 import PricingCard from './Components/PricingCard/PricingCard'
 import Ready from './Components/ReadySection/Ready'
 import Footer from './Components/Footer/Footer'
+import { ToastContainer } from 'react-toastify'
 
 const fetchItem= async()=>{
   const res = await fetch('./ProductData.json')
@@ -40,6 +41,7 @@ function App() {
      
       <Suspense fallback={"loding...."}>
         <Itemcard carts={carts} setCarts={setCarts} itemPromise={itemPromise}></Itemcard>
+        <ToastContainer />
       </Suspense>
     </main>
     <footer>

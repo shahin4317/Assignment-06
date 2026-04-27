@@ -1,5 +1,6 @@
 import React from 'react';
 import Features from '../Features/Features';
+import { toast } from 'react-toastify';
 
 
 const Card = ({ item, carts, setCarts }) => {
@@ -8,7 +9,7 @@ const Card = ({ item, carts, setCarts }) => {
     const addToCart = (item) => {
         const isExist = carts.find(c => c.id == item.id);
         if (isExist) {
-            alert('item is already card')
+            toast.error('item is already card')
             return 
 
         }
@@ -16,7 +17,7 @@ const Card = ({ item, carts, setCarts }) => {
 
 
         setCarts([...carts, item])
-        console.log(item);
+        toast.success("Item added to Cart")
     }
     return (
         <div className="card bg-base-100 shadow-sm space-y-5 p-10">
