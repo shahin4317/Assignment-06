@@ -8,6 +8,8 @@ import Itemcard from './Components/Itemcard/Itemcard'
 import { Suspense, useState } from 'react'
 import DigitalTools from './Components/DigitalTools/DigitalTools'
 import PricingCard from './Components/PricingCard/PricingCard'
+import Ready from './Components/ReadySection/Ready'
+import Footer from './Components/Footer/Footer'
 
 const fetchItem= async()=>{
   const res = await fetch('./ProductData.json')
@@ -46,6 +48,8 @@ function App() {
       <Suspense fallback={"Loding..."}>
         <PricingCard pricingCardPromise={pricingCardPromise}></PricingCard>
       </Suspense>
+      <Ready></Ready>
+      <Footer></Footer>
     </footer>
     
     

@@ -5,7 +5,7 @@ import Carts from '../Carts/Carts';
 const Itemcard = ({ itemPromise, carts, setCarts }) => {
     const items = use(itemPromise)
 
-    const [selectedType, setSelectedType] = useState(["avilable"])
+    const [activeTag, setActiveTag] = useState('item')
 
     return (
         <div className=''>
@@ -15,22 +15,24 @@ const Itemcard = ({ itemPromise, carts, setCarts }) => {
                     <p className='text-sm text-gray-400'>Choose from our curated collection of premium digital products <br /> designedto boost your productivity and creativity.</p>
                 </div>
                 <div className='flex justify-center gap-4 pt-4'>
-                    <button
-                        onClick={() => setSelectedType("available")}
-                        className={`btn ${selectedType === "available" ? "bg-blue-600 rounded-full text-white" : "btn border-blue-600 rounded-full"} mr-3`}>Products</button>
+                    <button onClick={()=> setActiveTag('item')} className='btn'>Products</button>
 
-                    <button
-                        onClick={() => setSelectedType("Selected")}
-                        className={`btn ${selectedType === "Selected" ? "bg-blue-600 rounded-full text-white" : "btn rounded-full border-blue-600 "}`}>Card</button>
+                    <button onClick={()=> setActiveTag('carts')} className='btn '>Card</button>
                 </div>
             </div>
             {/* daynamic contant */}
             <div>
                 
-                    <AvailableProducts carts={carts} setCarts={setCarts} items={items}></AvailableProducts>
+                    {/* <AvailableProducts carts={carts} setCarts={setCarts} items={items}></AvailableProducts>
 
                     <Carts carts={carts}></Carts>
-                
+                 */}
+                {
+                    activeTag == 'item' ? (<AvailableProducts carts={carts} setCarts={setCarts} items={items}></AvailableProducts>) : (<Carts carts={carts}></Carts>)
+                }
+
+
+
 
             </div>
 

@@ -2,13 +2,20 @@ import React from 'react';
 import Features from '../Features/Features';
 
 
-const Card = ({ item ,carts, setCarts }) => {
-    const { name, description, price, period, icon, tagType,features } = item
+const Card = ({ item, carts, setCarts }) => {
+    const { name, description, price, period, icon, tagType, features } = item
 
-    const addToCart = (item)=>{
-        
-        
-        setCarts([...carts,item])
+    const addToCart = (item) => {
+        const isExist = carts.find(c => c.id == item.id);
+        if (isExist) {
+            alert('item is already card')
+            return 
+
+        }
+
+
+
+        setCarts([...carts, item])
         console.log(item);
     }
     return (
@@ -25,10 +32,10 @@ const Card = ({ item ,carts, setCarts }) => {
                 <h3> <span className='text-2xl font-bold'>{price}</span> / <span className='text-sm text-gray-600'>{period}</span></h3>
                 <ul className="mt-6 flex flex-col gap-2 text-xs">
                     {
-                        features.map((feature ,index)=> <li key={index}>
-                            
+                        features.map((feature, index) => <li key={index}>
+
                             <svg xmlns="http://www.w3.org/2000/svg" className="size-4 me-2 inline-block text-success" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" /></svg>
-                            
+
                             <span>{feature} </span>
                         </li>)
                     }
@@ -36,7 +43,7 @@ const Card = ({ item ,carts, setCarts }) => {
                 </ul>
             </div>
             {/*  */}
-            <button onClick={() =>addToCart(item)} className='btn btn-primary rounded-full'>Buy Now</button>
+            <button onClick={() => addToCart(item)} className='btn btn-primary rounded-full'>Buy Now</button>
         </div>
     );
 };
