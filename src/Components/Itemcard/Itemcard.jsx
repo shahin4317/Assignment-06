@@ -15,20 +15,30 @@ const Itemcard = ({ itemPromise, carts, setCarts }) => {
                     <p className='text-sm text-gray-400'>Choose from our curated collection of premium digital products <br /> designedto boost your productivity and creativity.</p>
                 </div>
                 <div className='flex justify-center gap-4 pt-4'>
-                    <button onClick={()=> setActiveTag('item')} className='btn'>Products</button>
+                    <button
+                        onClick={() => setActiveTag('item')}
+                        className={`btn rounded-full ${activeTag === 'item' ? 'bg-blue-500 text-white' : ''}`}
+                    >
+                        Products
+                    </button>
 
-                    <button onClick={()=> setActiveTag('carts')} className='btn '>Card</button>
+                    <button
+                        onClick={() => setActiveTag('carts')}
+                        className={`btn rounded-full ${activeTag === 'carts' ? 'bg-blue-500 text-white' : ''}`}
+                    >
+                        Cart
+                    </button>
                 </div>
             </div>
             {/* daynamic contant */}
             <div>
-                
-                    {/* <AvailableProducts carts={carts} setCarts={setCarts} items={items}></AvailableProducts>
+
+                {/* <AvailableProducts carts={carts} setCarts={setCarts} items={items}></AvailableProducts>
 
                     <Carts carts={carts}></Carts>
                  */}
                 {
-                    activeTag == 'item' ? (<AvailableProducts carts={carts} setCarts={setCarts} items={items}></AvailableProducts>) : (<Carts carts={carts}></Carts>)
+                    activeTag == 'item' ? (<AvailableProducts carts={carts} setCarts={setCarts} items={items}></AvailableProducts>) : (<Carts carts={carts} setCarts={setCarts}></Carts>)
                 }
 
 
