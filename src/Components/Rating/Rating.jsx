@@ -2,21 +2,23 @@ import React from 'react';
 
 const Rating = () => {
     return (
-        <div className='flex  bg-blue-600 gap-40 justify-center p-15 mb-10'>
+        <div className='flex flex-col sm:flex-row justify-center items-center bg-blue-600 gap-6 sm:gap-10 md:gap-20 px-4 py-10 sm:py-12 md:py-16 mb-10 text-center'>
+            
             <div>
-                <h3 className='text-3xl font-bold text-white'>50K+</h3>
-                <p className='text-sm text-white'>Active Users  </p>
+                <h3 className='text-2xl sm:text-3xl md:text-4xl font-bold text-white'>50K+</h3>
+                <p className='text-sm text-white'>Active Users</p>
             </div>
+
             <div>
-                <h3 className='text-3xl font-bold text-white'>200+</h3>
+                <h3 className='text-2xl sm:text-3xl md:text-4xl font-bold text-white'>200+</h3>
                 <p className='text-sm text-white'>Premium Tools</p>
             </div>
+
             <div>
-                <h3 className='text-3xl font-bold text-white'>4.9</h3>
+                <h3 className='text-2xl sm:text-3xl md:text-4xl font-bold text-white'>4.9</h3>
                 <p className='text-sm text-white'>Rating</p>
-                
             </div>
-            
+
         </div>
     );
 };

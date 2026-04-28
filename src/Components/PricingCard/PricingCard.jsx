@@ -10,7 +10,7 @@ const PricingCard = ({pricingCardPromise}) => {
         <div>
             <div className='text-center mb-7 space-y-3'>
                 <h2 className='text-2xl font-bold '>Simple, Transparent Pricing</h2>
-                <p className='text-sm text-gray-500'>Choose the plan that fits your needs. Upgrade or downgrade anytime.</p>
+                <p className='text-sm text-gray-500'>Choose the plan that fits your needs. <br /> Upgrade or downgrade anytime.</p>
             </div>
             {/* card */}
             <div className=' grid md:grid-cols-1 lg:grid-cols-3 '>
